@@ -62,24 +62,27 @@ main{
     width: 20%;
     display: block !important;
 }
-.categories li{
-    list-style: none;
-}
 .categories .cats{
     height: 200px;
     text-align: center;
     font-family: 'Lobster', cursive;
     background: #512DA8;
     border: 1px #512DA8 solid;
+    margin: 0px 20px;
+    border-radius: 5px;
+}
+.categories li{
+    list-style: none;
 }
 .categories .cats:hover,
 .categories .cats:active{
     background: #7E57C2;
+    box-shadow: 10px 10px 8px #888888;
 }
-.categories .me{
-    border: 2px #FF3D00 dotted;
+.categories .meetme{
     height: 100px;
     text-align:center;
+    border-radius: 5px;
 }
 .cats .cats__title{
     background:#D1C4E9;
@@ -87,16 +90,32 @@ main{
     border-radius: 8px;
 }
 .cats li{
-    margin: 0px 40px;
+    margin-right: 20px;
 }
 .cats li:hover{
     border: 2px white solid;
     color:white;
 }
-.me .image{
+.meetme .image{
     border-radius:50%;
-    height: 100px;
-    width:100px;
+    height: 150px;
+    width:150px;
+    position: relative;
+}
+.meetme .mine{
+    border: 1px black solid;
+    margin-top: -60px;
+    margin-right:20px;
+    height: 150px;
+    font-family: 'Lobster', cursive;
+    background: #512DA8;
+    border: 1px #512DA8 solid;
+    border-radius: 5px;
+}
+.meetme .mine:hover,
+.meetme .mine:active{
+    background: #7E57C2;
+    box-shadow: 10px 10px 8px #888888;  
 }
 .stargazer{
     background: url('https://expertphotography.com/wp-content/uploads/2018/09/texture-photography-atmospheric-light.jpg');
@@ -173,3 +192,77 @@ main{
     background:white;
     border: 0px;
 }
+.backdrop{
+    position: fixed;
+    display:none;
+    top:0;
+    left:0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+}
+.modal__title{
+    color: black;
+}
+.modal {
+    position: fixed;
+    display:none;
+    z-index: 200;
+    top: 40%;
+    left: 30%;
+    width: 40%;
+    background: #E0F2F1;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+  
+  .modal__title {
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    margin: 0 0 1rem 0;
+  }
+  
+  .modal__actions {
+    text-align: center;
+  }
+
+  .modal__actions input{
+        border-radius: 5px;
+        width: 80%;
+        height: 50px;
+        margin: 10px 0px;
+        font-family: 'Lobster', cursive;
+        font-size: 15px;
+  }
+
+  
+  .modal__action {
+    border: 1px solid #0e4f1f;
+    background: #0e4f1f;
+    text-decoration: none;
+    color: white;
+    font: inherit;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .modal__action:hover,
+  .modal__action:active {
+    background: #2ddf5c;
+    border-color: #2ddf5c;
+  }
+  
+  .modal__action--negative {
+    background: red;
+    border-color: red;
+    display:none;
+  }
+  
+  .modal__action--negative:hover,
+  .modal__action--negative:active {
+    background: #ff5454;
+    border-color: #ff5454;
+  }
