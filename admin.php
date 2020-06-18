@@ -35,23 +35,10 @@ a{
 }
 </style>
 <?php
-if(isset($_POST["submit"]))
-{
-$local='127.0.0.1';
-$db='test';
-$user='root';
-$password='';
-$c=uniqid (rand (),true);
-$conn= mysqli_connect($local,$user,$password,$db) or die('couldn\'t connect');
-$p= "CREATE TABLE IF NOT EXISTS `posts`(  `title` varchar(100),
- `content` varchar(1000) )";
-$conn->query($p);
-$title= $_POST["title"];
-$content= $_POST["body"];
-$q= "INSERT INTO `posts` VALUES('$title','$content','$c')";
-$conn->query($q);
-}
-
+  include 'classes/user.php';
+  $obj = new user();
+  $c = $obj->id();
+  //$obj->insert($c,'title','fjlkasdmas','hello.png');
  ?>
  <link rel="stylesheet" href="admin.css">
  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Metal+Mania&display=swap" rel="stylesheet">
@@ -79,7 +66,7 @@ $conn->query($q);
         <nav class="main-nav">
             <ul class="main-nav__items">
 				<li class= "main-nav__item main-header__items--cta">
-                    <a  href="https://localhost/createpost.php" class="main-header__items">Create Post</a>
+                    <a  href="<?php echo 'https://localhost/createpost.php'; ?>" class="main-header__items">Create Post</a>
                 </li>
                 <li class= "main-nav__item main-header__items--cta">
                     <a  class="main-header__items">Logout</a>
