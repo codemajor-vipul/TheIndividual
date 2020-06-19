@@ -7,8 +7,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Metal+Mania&display=swap" rel="stylesheet">
 </head>
 <?php 
+include 'classes/user.php';
 $x=33;
-
+if(isset($_POST['submit'])){
+  $obj = new user();
+  if($obj->authenticate($_POST['email'],$_POST['pass'])){
+    session_start();
+    header("location: https://localhost/admin.php");
+    $_SESSION['email']= $_POST['email'];
+  }
+  else{
+    echo '<script> alert("user name or password donot match!") </script>';
+  }
+}
 ?>
 <body>
 <script></script>
@@ -26,7 +37,7 @@ $x=33;
     </div>
 <header class="main-header">
         <div>
-            <a href="https://localhost/theindividual.php" class="main-header__brand">
+            <a href="https://localhost/initialtion.php" class="main-header__brand">
                 The Individual
             </a>
         </div>

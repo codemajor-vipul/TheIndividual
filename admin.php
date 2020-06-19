@@ -1,44 +1,16 @@
 <!Doctype html>
 <head><title></title>
-<style>
-input{
-display:inline-block;
-float:left;
-}
-textarea{
-	display:inline-block;
-float:left;
-}
-label{
-    display: inline-block;
-    float: left;
-    clear: left;
-    width: 200px;
-    text-align: left;
-}
-.header{
-	background: url('https://expertphotography.com/wp-content/uploads/2018/09/texture-photography-atmospheric-light.jpg');
-	width: 1365px;
-	margin-top:-7px;
-	margin-left: -7px;
-	height: 150px;
-	display: flex;
-}
-.options{
-	display: flex;
-}
-a:hover{
-	color: #FF6347	;
-}
-a{
-	color:white;
-}
-</style>
 <?php
   include 'classes/user.php';
+  session_start();
+  if(!isset($_SESSION['email'])){
+      header("location: https://localhost/theindividual.php");
+  }
+  else{
   $obj = new user();
   $c = $obj->id();
   //$obj->insert($c,'title','fjlkasdmas','hello.png');
+  }
  ?>
  <link rel="stylesheet" href="admin.css">
  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Metal+Mania&display=swap" rel="stylesheet">
@@ -69,7 +41,7 @@ a{
                     <a  href="<?php echo 'https://localhost/createpost.php'; ?>" class="main-header__items">Create Post</a>
                 </li>
                 <li class= "main-nav__item main-header__items--cta">
-                    <a  class="main-header__items">Logout</a>
+                    <a href="https://localhost/logout.php" class="main-header__items">Logout</a>
 				</li>
             </ul>
 		</nav>

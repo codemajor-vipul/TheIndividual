@@ -31,10 +31,12 @@ class user extends usercontrol{
     public function update(){
         $this->updatePosts($this->id,$this->title,$this->content,$this->imageurl);
     }
-    public function insert($id,$title,$content,$imageurl){
-        $this->insertTable($id,$title,$content,$imageurl);
+    public function insert($id,$title,$content,$imageurl,$currenTime,$currentDate,$category){
+        $this->insertTable($id,$title,$content,$imageurl,$currenTime,$currentDate,$category);
     }
-
+    public function authenticate($email,$pass){
+            return $this->auth($email,$pass);
+    }
    
 
 }

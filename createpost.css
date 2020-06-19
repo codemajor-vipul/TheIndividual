@@ -53,7 +53,7 @@ body{
     border: 0px;
 }
 .createpost{
-    border: 3px #FF3D00 solid;
+    
     margin: 10px 40px;
 }
 .modal__title{
@@ -102,6 +102,14 @@ body{
 padding-top:0;
 padding-bottom:0.4em;
 padding-right: 0.4em;
+}
+.modal__actions .category{
+    border-radius: 5px;
+    width: 80%;
+    height: 50px;
+    margin: 10px 0px;
+    font-family: 'Lobster', cursive;
+    font-size: 15px;
 }
 
   
